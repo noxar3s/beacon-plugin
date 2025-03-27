@@ -97,7 +97,7 @@ droppeditem:
    - "item:ENCHANTED_GOLDEN_APPLE amount:1"
    - "item:GOLDEN_APPLE amount:4"
    - "item:ORANGE_SHULKER_BOX amount:1"
-   - "item:krwiopijec amount 0
+   - "item:KRWIOPIJEC amount:0"
     # Console commands
     #   %player% - player
    - "cmd: /eco give %player% 200"
