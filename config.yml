@@ -1,0 +1,169 @@
+#
+#██████╗░██████╗░░█████╗░██████╗░░██████╗███╗░░░███╗██████╗░░░░░░░██╗░░░░░██╗████████╗███████╗
+#██╔══██╗██╔══██╗██╔══██╗██╔══██╗██╔════╝████╗░████║██╔══██╗░░░░░░██║░░░░░██║╚══██╔══╝██╔════╝
+#██║░░██║██████╔╝██║░░██║██████╔╝╚█████╗░██╔████╔██║██████╔╝█████╗██║░░░░░██║░░░██║░░░█████╗░░
+#██║░░██║██╔══██╗██║░░██║██╔═══╝░░╚═══██╗██║╚██╔╝██║██╔═══╝░╚════╝██║░░░░░██║░░░██║░░░██╔══╝░░
+#██████╔╝██║░░██║╚█████╔╝██║░░░░░██████╔╝██║░╚═╝░██║██║░░░░░░░░░░░███████╗██║░░░██║░░░███████╗
+#╚═════╝░╚═╝░░╚═╝░╚════╝░╚═╝░░░░░╚═════╝░╚═╝░░░░░╚═╝╚═╝░░░░░░░░░░░╚══════╝╚═╝░░░╚═╝░░░╚══════╝
+#
+author: PolsatGraniePL
+version: "2.0.1-Lite"
+messages:
+#     %strength% | %protection% | %speed% | %agility%
+  actionbar: "&c %strength%%     &7 %protection%%    #4196E1⚡ %speed%%    &e&l→ &e%agility%%"
+  dropopen: " &8▶ &7You just opened &9Drop&7!"
+  reload: " &8▶ &7reloaded config! &cSome things in the config require you to restart the server, keep that in mind!"
+  limit-getted: " &8▶ &7You have already reached the maximum percentage of this stat!"
+  same-ip: " &8▶ &7The player you killed has the same IP!"
+  same-player: " &8▶ &7You've already killed that player!"
+  show-drop-gui-name: "&8Drop from &9Drop"
+  unban-message: " &8▶ &#00FF00Player &7%unbanner% &#00FF00has dug up player &7%player%'s &#00FF00grave!"
+ 
+  plr-cmd-1: " &8▶ &7The specified player is not online"
+  plr-cmd-2: " &8▶ &7Invalid argument, available phrases:&7 add/remove/set"
+  plr-cmd-3: " &8▶ &7Invalid argument, available phrases:&7 odpornosc/sila/szybkosc/zwinnosc"
+  plr-cmd-4: " &8▶ &7Please enter the correct number"
+  plr-cmd-5: " &8▶ &7Enter player"
+ 
+config:
+  ban-system:
+    #     %player%
+    ban-command: "tempban %player% 1d You no longer have any stats!"
+    use-ban-command: false
+    minecraft-ban:
+   #  %nl% - new line
+    #  %player% - player's nickname
+    #  %time% - ban time in seconds
+      reason: "&cYou no longer have any stats!%nl%&7Come back to us in &9%time% seconds&7!"
+      time: 86400 #(In seconds)
+  start-statistic-value: 100
+  after-ban-statistic: 100
+  update-info-to-op: true
+  showdrop-gui-size: 27 #[9, 18, 27, 36, 45, 54]
+  player-kill-player-to-drop: true
+  same-ip-protect: true
+  same-player-kill:
+    enabled: true
+    time: 5 #(in minutes)
+# Stat limits
+  strength-limit: 200
+  protection-limit: 200
+  speed-limit: 500 # 500 is the maximum value for speed!
+  agility-limit: 200
+  tombstone-system:
+    enabled: true
+    sign-glowing: false
+    # It must be a plaque on the wall (<type>_WALL_SIGN)
+    tombstone-sign-type: OAK_WALL_SIGN
+    tombstone-main-block: BEDROCK
+    # Works depending on whether use-ban-command is enabled
+    unban-command: unban %player%
+    unban-particle: TOTEM
+    unban-particle-count: 100
+    #  %player% - player's nickname
+    sign-line-1: "Here rests"
+    sign-line-2: "&9&n%player%"
+    sign-line-3: "Dig up the head"
+    sign-line-4: "to &4spawn&r it"
+    #  %player% - Banned player's nickname
+    #  %unbanner% - unban player's nickname
+    broadcast-unban-message: true
+ 
+# The list of materials can be found at https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html
+droppeditem:
+#      (0 - 100)
+  chance: 50
+  material: BLUE_STAINED_GLASS
+  name: "&8⭐ &9&lDROP &8⭐"
+  lore:
+  - ''
+  - '&7Right click to get'
+  - '&9Drop&7 content'
+  - ''
+  glowing: true
+  #Whether the item should appear under the player or in his inventory
+  drop-item-naturally: false
+  drop-from-item:
+   - $INSYGNIA
+    - $EMB_ODPORNOSCI
+    - $EMB_SILY
+    - $EMB_SZYBKOSCI
+    - $EMB_ZWINNOSCI
+    # item:<material> amount:<amount> name:<name> lore:<lore> enchant:<enchant>_<level>
+    #   Use "_" to add a space in lore and name
+    #   Use "\n" to add a new line in lore
+   - "item:ELYTRA amount:1 name:&8●_&c&lElytra_of_the_gods_&8● lore:&7Take_to_the_skies_with\n&7the_elytra_of_the_&cgods enchant:MENDING_1 enchant:DURABILITY_10"
+   - "item:TOTEM_OF_UNDYING amount:1"
+   - "item:ENCHANTED_GOLDEN_APPLE amount:1"
+   - "item:GOLDEN_APPLE amount:2"
+   - "item:ORANGE_SHULKER_BOX amount:1"
+    # Console commands
+    #   %player% - player
+   - "cmd: /eco give %player% 200"
+emblematy:
+  glowing: true
+  insygnia-odrodzenia:
+    material: PAPER
+    name: "&8⭐ &6&lRebirth insignia &8⭐"
+    lore:
+    - ''
+    - '&7Right click to reset'
+    - '&ceach&7 stat to &c100%'
+    - ''
+    open-message: " &8▶ &7All stats reset!"
+    restart-to-value: 100
+    crafting:
+        enabled: true
+        slot-1: AIR
+        slot-2: GHAST_TEAR
+        slot-3: AIR
+        slot-4: GHAST_TEAR
+        slot-5: GOLD_BLOCK
+        slot-6: GHAST_TEAR
+        slot-7: AIR
+        slot-8: GHAST_TEAR
+        slot-9: AIR
+  odpornosci:
+    material: PAPER
+    name: "&8⭐ &7&lResistance emblem &8⭐"
+    lore:
+    - ''
+    - '&7Right click to add'
+    - '&c10%&7 to &7Resistance'
+    - ''
+    open-message: " &7+10% "
+    add-value: 10
+    remove-value-on-death: 10
+  sily:
+    material: PAPER
+    name: "&8⭐ &c&lStrength emblem &8⭐ "
+    lore:
+    - ''
+    - '&7Right click to add'
+    - '&c10%&7 to &cStrength'
+    - ''
+    open-message: " &c+10% "
+    add-value: 10
+    remove-value-on-death: 10
+  szybkosci:
+    material: PAPER
+    name: "&8⭐ &#4196E1&lSpeed emblem &8⭐ "
+    lore:
+    - ''
+    - '&7Right click to add'
+    - '&c10%&7 to &#4196E1Speed'
+    - ''
+    open-message: " &#4196E1+10% ⚡"
+    add-value: 10
+    remove-value-on-death: 10
+  zwinnosci:
+    material: PAPER
+    name: "&8⭐ &e&lAgility emblem &8⭐ "
+    lore:
+    - ''
+    - '&7Right click to add'
+    - '&c10%&7 to &eAgility'
+    - ''
+    open-message: " &e+10% &e&l→"
+    add-value: 10
+    remove-value-on-death: 10

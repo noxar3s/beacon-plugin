@@ -9,8 +9,9 @@ ENV VERSION=1.20.4
 # Add your Minecraft username to ops list
 ENV OPS=NoXAr3s
 
-# Example: Copy your plugin JAR into the plugins directory
-# Replace 'BeaconPairsPlugin.jar' with the name of your JAR
-# COPY target/BeaconPairsPlugin.jar /plugins/BeaconPairsPlugin.jar
-# COPY AwakenSMPOnline-1.6.4.jar /plugins/AwakenSMPOnline.jar
+# Create plugins directory if it doesn't exist
+RUN mkdir -p /plugins/DropSMP/
+
+# Copy plugin JAR and config
 COPY dropsmp-2.0.3-Premium.jar /plugins/dropsmp-2.0.3-Premium.jar
+COPY config.yml /plugins/DropSMP/config.yml
