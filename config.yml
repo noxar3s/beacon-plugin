@@ -35,20 +35,20 @@ config:
     #  %player% - player's nickname
     #  %time% - ban time in seconds
       reason: "&cYou no longer have any stats!%nl%&7Come back to us in &9%time% seconds&7!"
-      time: 86400 #(In seconds)
+      time: 172800 #(In seconds)
   start-statistic-value: 100
-  after-ban-statistic: 100
+  after-ban-statistic: 80
   update-info-to-op: true
-  showdrop-gui-size: 27 #[9, 18, 27, 36, 45, 54]
+  showdrop-gui-size: 45 #[9, 18, 27, 36, 45, 54]
   player-kill-player-to-drop: true
   same-ip-protect: true
   same-player-kill:
     enabled: true
-    time: 5 #(in minutes)
+    time: 1440 #(in minutes)
 # Stat limits
   strength-limit: 200
   protection-limit: 200
-  speed-limit: 500 # 500 is the maximum value for speed!
+  speed-limit: 300 # 500 is the maximum value for speed!
   agility-limit: 200
   tombstone-system:
     enabled: true
@@ -72,7 +72,7 @@ config:
 # The list of materials can be found at https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html
 droppeditem:
 #      (0 - 100)
-  chance: 50
+  chance: 75
   material: BLUE_STAINED_GLASS
   name: "&8⭐ &9&lDROP &8⭐"
   lore:
@@ -95,7 +95,7 @@ droppeditem:
    - "item:ELYTRA amount:1 name:&8●_&c&lElytra_of_the_gods_&8● lore:&7Take_to_the_skies_with\n&7the_elytra_of_the_&cgods enchant:MENDING_1 enchant:DURABILITY_10"
    - "item:TOTEM_OF_UNDYING amount:1"
    - "item:ENCHANTED_GOLDEN_APPLE amount:1"
-   - "item:GOLDEN_APPLE amount:2"
+   - "item:GOLDEN_APPLE amount:4"
    - "item:ORANGE_SHULKER_BOX amount:1"
     # Console commands
     #   %player% - player
@@ -113,7 +113,7 @@ emblematy:
     open-message: " &8▶ &7All stats reset!"
     restart-to-value: 100
     crafting:
-        enabled: true
+        enabled: false
         slot-1: AIR
         slot-2: GHAST_TEAR
         slot-3: AIR
