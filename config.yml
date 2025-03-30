@@ -72,7 +72,7 @@ config:
 # The list of materials can be found at https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html
 droppeditem:
 #      (0 - 100)
-  chance: 75
+  chance: 100
   material: BLUE_STAINED_GLASS
   name: "&8⭐ &9&lDROP &8⭐"
   lore:
@@ -134,7 +134,7 @@ emblematy:
     - ''
     open-message: " &7+10% "
     add-value: 10
-    remove-value-on-death: 10
+    remove-value-on-death: 5
   sily:
     material: PAPER
     name: "&8⭐ &c&lStrength emblem &8⭐ "
