@@ -1,0 +1,24 @@
+items:
+  piekielny_miecz:
+    displayname: "<#ff0000>Piekielny Miecz"
+    material: NETHERITE_SWORD
+    lore:
+      - "&cPrzeklęta broń z głębin Netheru..."
+    durability: 2031  # Maksymalna wytrzymałość Netherite Sword
+    enchants:
+      - DAMAGE_ALL:6  # Sharpness VI
+      - FIRE_ASPECT:3  # Fire Aspect III
+      - DURABILITY:3  # Unbreaking III
+      - LOOT_BONUS_MOBS:3  # Looting III
+    mechanics:
+      hit_actions:
+        chance: 8  # 8% szansy na efekt
+        actions:
+          - effect: 
+              type: MINING_FATIGUE
+              level: 1
+              duration: 140  # 7 sekund (1 tick = 1/20s)
+          - effect:
+              type: WITHER
+              level: 1
+              duration: 100  # 5 sekund (1 tick = 1/20s)
