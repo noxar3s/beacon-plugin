@@ -10,8 +10,8 @@ ENV VERSION=1.20.4
 ENV OPS=NoXAr3s
 
 # Create plugins directory if it doesn't exist
-RUN mkdir -p /plugins/DropSMP/
+# RUN mkdir -p /plugins/DropSMP/
 
 # Copy plugin JAR and config
-COPY dropsmp-2.0.3-Premium.jar /plugins/dropsmp-2.0.3-Premium.jar
-COPY config.yml /plugins/DropSMP/config.yml
+# COPY dropsmp-2.0.3-Premium.jar /plugins/dropsmp-2.0.3-Premium.jar
+# COPY config.yml /plugins/DropSMP/config.yml
